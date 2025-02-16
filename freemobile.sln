@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{D2357281
 	ProjectSection(SolutionItems) = preProject
 		build.cake = build.cake
 		cake.config = cake.config
+		.github\workflows\ci.yaml = .github\workflows\ci.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{9B0162B9-41C9-424E-85F5-CEDE5B7DDC10}"
