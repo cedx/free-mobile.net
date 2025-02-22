@@ -1,5 +1,7 @@
 namespace Belin.FreeMobile;
 
+using System.Net.Http.Headers;
+
 /// <summary>
 /// Sends messages by SMS to a <see href="https://mobile.free.fr">FreeMobile</see> account.
 /// </summary>
@@ -65,7 +67,7 @@ public class Client(string account, string apiKey, string baseUrl = "https://sms
 
 		var queryString = string.Join('&', query.Select(item => $"{item.Key}={Uri.EscapeDataString(item.Value)}"));
 		var request = new HttpRequestMessage(HttpMethod.Get, new Uri(BaseUrl, $"sendmsg?{queryString}"));
-		request.Headers.Add("user-agent", $".NET/{Environment.Version}");
+		request.Headers.UserAgent.Add(new ProductInfoHeaderValue($".NET/{Environment.Version}"));
 		return request;
 	}
 }
