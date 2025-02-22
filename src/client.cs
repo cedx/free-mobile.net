@@ -64,8 +64,8 @@ public class Client(string account, string apiKey, string baseUrl = "https://sms
 		};
 
 		var queryString = string.Join('&', query.Select(item => $"{item.Key}={Uri.EscapeDataString(item.Value)}"));
-		var message = new HttpRequestMessage(HttpMethod.Get, new Uri(BaseUrl, $"sendmsg?{queryString}"));
-		message.Headers.Add("user-agent", $".NET/{Environment.Version}");
-		return message;
+		var request = new HttpRequestMessage(HttpMethod.Get, new Uri(BaseUrl, $"sendmsg?{queryString}"));
+		request.Headers.Add("user-agent", $".NET/{Environment.Version}");
+		return request;
 	}
 }
