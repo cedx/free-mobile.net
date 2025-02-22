@@ -5,7 +5,7 @@ using System.Net.Http;
 // Sends an SMS notification.
 try {
 	var client = new Client("your account identifier", "your API key");
-	client.SendMessage("Hello World from .NET!");
+	await client.SendMessageAsync("Hello World from .NET!");
 	Console.WriteLine("The message was sent successfully.");
 }
 catch (HttpRequestException e) {
