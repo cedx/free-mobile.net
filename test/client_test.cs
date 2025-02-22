@@ -34,13 +34,11 @@ public sealed class ClientTest {
 	public void ValidCredentials() {
 		var client = new Client(Environment.GetEnvironmentVariable("FREEMOBILE_ACCOUNT")!, Environment.GetEnvironmentVariable("FREEMOBILE_API_KEY")!);
 		client.SendMessage("Hello Cédric, from .NET! [sync]");
-		IsTrue(true);
 	}
 
 	[TestMethod("It should send SMS messages if the credentials are valid")]
 	public async Task ValidCredentialsAsync() {
 		var client = new Client(Environment.GetEnvironmentVariable("FREEMOBILE_ACCOUNT")!, Environment.GetEnvironmentVariable("FREEMOBILE_API_KEY")!);
 		await client.SendMessageAsync("Hello Cédric, from .NET! [async]");
-		IsTrue(true);
 	}
 }
