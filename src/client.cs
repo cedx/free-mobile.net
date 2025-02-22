@@ -33,8 +33,8 @@ public class Client(string account, string apiKey, string baseUrl = "https://sms
 	/// <returns>Completes when the message has been sent.</returns>
 	/// <exception cref="HttpRequestException">The HTTP response is unsuccessful.</exception>
 	public async Task SendMessage(string text, CancellationToken cancellationToken = default) {
+		using var request = await CreateRequest(text);
 		using var httpClient = new HttpClient();
-		using var request = CreateRequest(text);
 		using var response = await httpClient.SendAsync(request, cancellationToken);
 		response.EnsureSuccessStatusCode();
 	}
@@ -44,16 +44,15 @@ public class Client(string account, string apiKey, string baseUrl = "https://sms
 	/// </summary>
 	/// <param name="text">The message text.</param>
 	/// <returns>The newly created HTTP request message.</returns>
-	private HttpRequestMessage CreateRequest(string text) {
+	private async Task<HttpRequestMessage> CreateRequest(string text) {
 		var trimmedText = text.Trim();
-		var query = new Dictionary<string, string>() {
+		var query = new FormUrlEncodedContent(new Dictionary<string, string>() {
 			{ "msg", trimmedText.Length > 160 ? trimmedText[0..160] : trimmedText },
 			{ "pass", ApiKey },
 			{ "user", Account }
-		};
+		});
 
-		var queryString = string.Join('&', query.Select(item => $"{item.Key}={Uri.EscapeDataString(item.Value)}"));
-		var request = new HttpRequestMessage(HttpMethod.Get, new Uri(BaseUrl, $"sendmsg?{queryString}"));
+		var request = new HttpRequestMessage(HttpMethod.Get, new Uri(BaseUrl, $"sendmsg?{await query.ReadAsStringAsync()}"));
 		request.Headers.UserAgent.Add(new ProductInfoHeaderValue(".NET", Environment.Version.ToString(3)));
 		return request;
 	}
