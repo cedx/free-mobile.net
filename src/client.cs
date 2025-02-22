@@ -30,22 +30,9 @@ public class Client(string account, string apiKey, string baseUrl = "https://sms
 	/// </summary>
 	/// <param name="text">The message text.</param>
 	/// <param name="cancellationToken">The token to cancel the operation.</param>
-	/// <exception cref="HttpRequestException">The HTTP response is unsuccessful.</exception>
-	public void SendMessage(string text, CancellationToken cancellationToken = default) {
-		using var httpClient = new HttpClient();
-		using var request = CreateRequest(text);
-		using var response = httpClient.Send(request, cancellationToken);
-		response.EnsureSuccessStatusCode();
-	}
-
-	/// <summary>
-	/// Sends an SMS message to the underlying account.
-	/// </summary>
-	/// <param name="text">The message text.</param>
-	/// <param name="cancellationToken">The token to cancel the operation.</param>
 	/// <returns>Completes when the message has been sent.</returns>
 	/// <exception cref="HttpRequestException">The HTTP response is unsuccessful.</exception>
-	public async Task SendMessageAsync(string text, CancellationToken cancellationToken = default) {
+	public async Task SendMessage(string text, CancellationToken cancellationToken = default) {
 		using var httpClient = new HttpClient();
 		using var request = CreateRequest(text);
 		using var response = await httpClient.SendAsync(request, cancellationToken);
