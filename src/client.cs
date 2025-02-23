@@ -46,7 +46,7 @@ public class Client(string account, string apiKey, string baseUrl = "https://sms
 	/// <returns>The newly created HTTP request message.</returns>
 	private async Task<HttpRequestMessage> CreateRequest(string text) {
 		var trimmedText = text.Trim();
-		var query = new FormUrlEncodedContent(new Dictionary<string, string>() {
+		using var query = new FormUrlEncodedContent(new Dictionary<string, string>() {
 			{ "msg", trimmedText.Length > 160 ? trimmedText[0..160] : trimmedText },
 			{ "pass", ApiKey },
 			{ "user", Account }
