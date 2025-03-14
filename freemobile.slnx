@@ -1,0 +1,4 @@
+<Solution>
+	<Project Path="src/freemobile.csproj" />
+	<Project Path="test/freemobile.tests.csproj" />
+</Solution>

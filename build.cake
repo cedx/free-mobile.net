@@ -17,7 +17,7 @@ Task("clean")
 
 Task("format")
 	.Description("Formats the source code.")
-	.Does(() => DotNetFormat("freemobile.sln"));
+	.Does(() => DotNetFormat("freemobile.slnx"));
 
 Task("publish")
 	.Description("Publishes the package.")
