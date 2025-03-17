@@ -13,17 +13,17 @@ public class Client(string account, string apiKey, string baseUrl = "https://sms
 	/// <summary>
 	/// The Free Mobile account.
 	/// </summary>
-	public string Account { get; } = account;
+	public string Account => account;
 
 	/// <summary>
 	/// The Free Mobile API key.
 	/// </summary>
-	public string ApiKey { get; } = apiKey;
+	public string ApiKey => apiKey;
 
 	/// <summary>
 	/// The base URL of the remote API endpoint.
 	/// </summary>
-	public Uri BaseUrl { get; } = new Uri(baseUrl.EndsWith('/') ? baseUrl : $"{baseUrl}/");
+	public Uri BaseUrl => new(baseUrl.EndsWith('/') ? baseUrl : $"{baseUrl}/");
 
 	/// <summary>
 	/// Sends an SMS message to the underlying account.
