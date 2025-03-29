@@ -1,5 +1,6 @@
 namespace Belin.FreeMobile;
 
+using System.Diagnostics.CodeAnalysis;
 using System.Net.Http.Headers;
 
 /// <summary>
@@ -8,7 +9,7 @@ using System.Net.Http.Headers;
 /// <param name="account">The Free Mobile account.</param>
 /// <param name="apiKey">The Free Mobile API key.</param>
 /// <param name="baseUrl">The base URL of the remote API endpoint.</param>
-public class Client(string account, string apiKey, string baseUrl = "https://smsapi.free-mobile.fr") {
+public class Client(string account, string apiKey, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr") {
 
 	/// <summary>
 	/// The Free Mobile account.
