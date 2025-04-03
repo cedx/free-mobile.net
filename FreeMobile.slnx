@@ -17,7 +17,7 @@
 		<File Path="README.md" />
 	</Folder>
 	<Folder Name="/example/">
-		<File Path="example/send_message.cs" />
+		<File Path="example/SendMessage.cs" />
 	</Folder>
 	<Folder Name="/share/">
 		<File Path="share/send_message.http" />
