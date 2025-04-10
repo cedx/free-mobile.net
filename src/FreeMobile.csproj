@@ -8,6 +8,14 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<Authors>CedX</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>api;client;free;mobile;sms</PackageTags>
+		<RepositoryUrl>https://github.com/cedx/free-mobile.net.git</RepositoryUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AssemblyName>Belin.FreeMobile</AssemblyName>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -15,4 +23,8 @@
 		<OutDir>../bin</OutDir>
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
 </Project>
