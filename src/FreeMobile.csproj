@@ -11,7 +11,7 @@
 		<Authors>CedX</Authors>
 		<IncludeSymbols>true</IncludeSymbols>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 		<PackageTags>api;client;free;mobile;sms</PackageTags>
 		<RepositoryUrl>https://github.com/cedx/free-mobile.net.git</RepositoryUrl>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -27,6 +27,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="../README.md" Pack="true" PackagePath="/" />
+		<None Include="../ReadMe.md" Pack="true" PackagePath="/" />
 	</ItemGroup>
 </Project>
