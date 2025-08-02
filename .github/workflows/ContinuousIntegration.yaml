@@ -11,10 +11,10 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 9
+      - name: Install dependencies
+        run: dotnet tool restore
       - name: Run tests
-        uses: cake-build/cake-action@v3
-        with:
-          target: test
+        run: dotnet cake --target=test
         env:
           FREEMOBILE_ACCOUNT: ${{secrets.FREEMOBILE_ACCOUNT}}
           FREEMOBILE_API_KEY: ${{secrets.FREEMOBILE_API_KEY}}
