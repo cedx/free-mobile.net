@@ -12,14 +12,14 @@ using System.Net.Http.Headers;
 public class Client(string account, string apiKey, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr") {
 
 	/// <summary>
-	/// The Free Mobile account.
+	/// The base URL of the remote API endpoint.
 	/// </summary>
-	public string Account => account;
+	public Uri BaseUrl { get; }
 
 	/// <summary>
-	/// The Free Mobile API key.
+	/// The Free Mobile username and password.
 	/// </summary>
-	public string ApiKey => apiKey;
+	private NetworkCredential credential;
 
 	/// <summary>
 	/// The base URL of the remote API endpoint.
