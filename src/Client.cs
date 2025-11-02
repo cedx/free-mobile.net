@@ -7,27 +7,19 @@ using System.Net.Http.Headers;
 /// <summary>
 /// Sends messages by SMS to a <see href="https://mobile.free.fr">FreeMobile</see> account.
 /// </summary>
-public class Client {
+/// <param name="credential">The Free Mobile user name and password.</param>
+/// <param name="baseUrl">The base URL of the remote API endpoint.</param>
+public class Client(NetworkCredential credential, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr") {
 
 	/// <summary>
 	/// The base URL of the remote API endpoint.
 	/// </summary>
-	public Uri BaseUrl { get; }
+	public Uri BaseUrl { get; } = new(baseUrl.EndsWith('/') ? baseUrl : $"{baseUrl}/");
 
 	/// <summary>
 	/// The Free Mobile user name and password.
 	/// </summary>
-	private readonly NetworkCredential credential;
-
-	/// <summary>
-	/// Creates a new client.
-	/// </summary>
-	/// <param name="credential">The Free Mobile user name and password.</param>
-	/// <param name="baseUrl">The base URL of the remote API endpoint.</param>
-	public Client(NetworkCredential credential, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr") {
-		this.BaseUrl = new(baseUrl.EndsWith('/') ? baseUrl : $"{baseUrl}/");
-		this.credential = credential;
-	}
+	private readonly NetworkCredential credential = credential;
 
 	/// <summary>
 	/// Creates a new client.
