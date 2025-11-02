@@ -15,14 +15,14 @@ public class Client {
 	public Uri BaseUrl { get; }
 
 	/// <summary>
-	/// The Free Mobile username and password.
+	/// The Free Mobile user name and password.
 	/// </summary>
 	private readonly NetworkCredential credential;
 
 	/// <summary>
 	/// Creates a new client.
 	/// </summary>
-	/// <param name="credential">The Free Mobile username and password.</param>
+	/// <param name="credential">The Free Mobile user name and password.</param>
 	/// <param name="baseUrl">The base URL of the remote API endpoint.</param>
 	public Client(NetworkCredential credential, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr") {
 		this.BaseUrl = new(baseUrl.EndsWith('/') ? baseUrl : $"{baseUrl}/");
@@ -32,11 +32,11 @@ public class Client {
 	/// <summary>
 	/// Creates a new client.
 	/// </summary>
-	/// <param name="username">The Free Mobile username.</param>
+	/// <param name="userName">The Free Mobile user name.</param>
 	/// <param name="password">The Free Mobile password.</param>
 	/// <param name="baseUrl">The base URL of the remote API endpoint.</param>
-	public Client(string username, string password, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr"):
-		this(new NetworkCredential(username, password), baseUrl) {}
+	public Client(string userName, string password, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr"):
+		this(new NetworkCredential(userName, password), baseUrl) {}
 
 	/// <summary>
 	/// Sends an SMS message to the underlying account.
