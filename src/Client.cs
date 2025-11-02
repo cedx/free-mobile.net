@@ -17,7 +17,7 @@ public class Client {
 	/// <summary>
 	/// The Free Mobile username and password.
 	/// </summary>
-	private NetworkCredential credential;
+	private readonly NetworkCredential credential;
 
 	/// <summary>
 	/// Creates a new client.
