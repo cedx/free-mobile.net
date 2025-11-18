@@ -1,6 +1,6 @@
 # Changelog
 
-## Version [2.1.0](https://github.com/cedx/free-mobile.net/compare/v2.0.0...v2.1.0)
+## Version [3.0.0](https://github.com/cedx/free-mobile.net/compare/v2.0.0...v3.0.0)
 - Added support for [.NET](https://dotnet.microsoft.com/en-us) 10.
 
 ## Version [2.0.0](https://github.com/cedx/free-mobile.net/compare/v1.0.1...v2.0.0)
