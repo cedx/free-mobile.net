@@ -6,12 +6,6 @@
 	CompanyName = "Cedric-Belin.fr"
 	Copyright = "© Cédric Belin"
 	Description = "Send SMS messages to your Free Mobile device."
-	GUID = "2ee631c1-7e8b-4abe-ac27-32f943d65384"
-
-	AliasesToExport = @()
-	CmdletsToExport = @()
-	FunctionsToExport = @()
-	VariablesToExport = @()
 
 	PrivateData = @{
 		PSData = @{
