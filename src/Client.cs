@@ -26,7 +26,7 @@ public class Client(NetworkCredential credential, Uri? baseUrl = null) {
 	/// </summary>
 	/// <param name="credential">The Free Mobile user name and password.</param>
 	/// <param name="baseUrl">The base URL of the remote API endpoint.</param>
-	public Client(NetworkCredential credential, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl) :
+	public Client(NetworkCredential credential, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl):
 		this(credential, new Uri(baseUrl, UriKind.Absolute)) { }
 
 	/// <summary>
