@@ -9,17 +9,25 @@ using System.Net.Http.Headers;
 /// </summary>
 /// <param name="credential">The Free Mobile user name and password.</param>
 /// <param name="baseUrl">The base URL of the remote API endpoint.</param>
-public class Client(NetworkCredential credential, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr") {
+public class Client(NetworkCredential credential, Uri? baseUrl = null) {
 
 	/// <summary>
 	/// The base URL of the remote API endpoint.
 	/// </summary>
-	public Uri BaseUrl { get; } = new(baseUrl.EndsWith('/') ? baseUrl : $"{baseUrl}/");
+	public Uri BaseUrl { get; set; } = baseUrl ?? new Uri("https://smsapi.free-mobile.fr/");
 
 	/// <summary>
 	/// The Free Mobile user name and password.
 	/// </summary>
-	private readonly NetworkCredential credential = credential;
+	public NetworkCredential Credential => credential;
+
+	/// <summary>
+	/// Creates a new client.
+	/// </summary>
+	/// <param name="credential">The Free Mobile user name and password.</param>
+	/// <param name="baseUrl">The base URL of the remote API endpoint.</param>
+	public Client(NetworkCredential credential, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl) :
+		this(credential, new Uri(baseUrl, UriKind.Absolute)) { }
 
 	/// <summary>
 	/// Creates a new client.
@@ -27,8 +35,17 @@ public class Client(NetworkCredential credential, [StringSyntax(StringSyntaxAttr
 	/// <param name="userName">The Free Mobile user name.</param>
 	/// <param name="password">The Free Mobile password.</param>
 	/// <param name="baseUrl">The base URL of the remote API endpoint.</param>
-	public Client(string userName, string password, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl = "https://smsapi.free-mobile.fr"):
+	public Client(string userName, string password, Uri? baseUrl = null):
 		this(new NetworkCredential(userName, password), baseUrl) {}
+
+	/// <summary>
+	/// Creates a new client.
+	/// </summary>
+	/// <param name="userName">The Free Mobile user name.</param>
+	/// <param name="password">The Free Mobile password.</param>
+	/// <param name="baseUrl">The base URL of the remote API endpoint.</param>
+	public Client(string userName, string password, [StringSyntax(StringSyntaxAttribute.Uri)] string baseUrl):
+		this(new NetworkCredential(userName, password), new Uri(baseUrl, UriKind.Absolute)) {}
 
 	/// <summary>
 	/// Sends an SMS message to the underlying account.
