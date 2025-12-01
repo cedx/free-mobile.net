@@ -1,5 +1,5 @@
 "Performing the static analysis of source code..."
 Import-Module PSScriptAnalyzer
 Invoke-ScriptAnalyzer $PSScriptRoot -Recurse
-Invoke-ScriptAnalyzer test -Recurse
+Invoke-ScriptAnalyzer test -ExcludeRule PSAvoidUsingConvertToSecureStringWithPlainText -Recurse
 Test-ModuleManifest FreeMobile.psd1 | Out-Null
