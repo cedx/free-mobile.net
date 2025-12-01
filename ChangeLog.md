@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [3.2.0](https://github.com/cedx/free-mobile.net/compare/v3.1.0...v3.2.0)
+- Restored support for [.NET](https://dotnet.microsoft.com/en-us) 9.
+
 ## Version [3.1.0](https://github.com/cedx/free-mobile.net/compare/v3.0.0...v3.1.0)
 - Added constructor overloads to the `Client` class.
 
