@@ -22,6 +22,7 @@
 		<File Path="share/SendMessage.http" />
 	</Folder>
 	<Folder Name="/Scripts/">
+		<File Path="Debug.ps1" />
 		<File Path="Invoke.ps1" />
 	</Folder>
 	<Folder Name="/Scripts/Tools/">
@@ -36,11 +37,13 @@
 		<File Path="tool/Test.ps1" />
 		<File Path="tool/Update.ps1" />
 		<File Path="tool/Version.ps1" />
+		<File Path="tool/Watch.ps1" />
 	</Folder>
 	<Folder Name="/Workflows/">
 		<File Path=".github/workflows/ContinuousIntegration.yaml" />
 	</Folder>
-	<Project Path="src/FreeMobile.csproj" />
+	<Project Path="src/FreeMobile/FreeMobile.csproj" />
+	<Project Path="src/FreeMobile.Cmdlets/FreeMobile.Cmdlets.csproj" />
 	<Project Path="test/FreeMobile.Tests.csproj">
 		<Build Solution="Release|*" Project="false" />
 	</Project>
