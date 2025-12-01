@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [3.3.0](https://github.com/cedx/free-mobile.net/compare/v3.2.0...v3.3.0)
+- Merged the [C#](https://learn.microsoft.com/en-us/dotnet/csharp) and [PowerShell](https://learn.microsoft.com/en-us/powershell) projects into one solution.
+
 ## Version [3.2.0](https://github.com/cedx/free-mobile.net/compare/v3.1.0...v3.2.0)
 - Restored support for [.NET](https://dotnet.microsoft.com/en-us) 9.
 
