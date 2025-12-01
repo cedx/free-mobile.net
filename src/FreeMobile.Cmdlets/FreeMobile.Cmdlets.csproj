@@ -8,18 +8,29 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<Authors>CedX</Authors>
+		<IncludeSymbols>true</IncludeSymbols>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+		<PackageTags>api;client;free;mobile;sms</PackageTags>
+		<RepositoryUrl>https://github.com/cedx/free-mobile.net.git</RepositoryUrl>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AssemblyName>Belin.FreeMobile.Cmdlets</AssemblyName>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<OutDir>../bin</OutDir>
+		<OutDir>../../bin</OutDir>
 		<TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Belin.FreeMobile" Version="3.*" />
+		<None Include="../../ReadMe.md" Pack="true" PackagePath="/" />
 		<PackageReference Include="System.Management.Automation" Version="7.*" PrivateAssets="all" />
+		<ProjectReference Include="../FreeMobile/FreeMobile.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -3,7 +3,7 @@
 		<Company>Cedric-Belin.fr</Company>
 		<Copyright>© Cédric Belin</Copyright>
 		<Product>Free Mobile for .NET</Product>
-		<Version>3.2.0</Version>
+		<Version>3.3.0</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -20,7 +20,8 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.*" />
 		<PackageReference Include="MSTest" Version="4.*" />
-		<ProjectReference Include="../src/FreeMobile.csproj" />
+		<ProjectReference Include="../src/FreeMobile/FreeMobile.csproj" />
+		<ProjectReference Include="../src/FreeMobile.Cmdlets/FreeMobile.Cmdlets.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
