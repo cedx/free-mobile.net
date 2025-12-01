@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Company>Cedric-Belin.fr</Company>
+		<Copyright>© Cédric Belin</Copyright>
+		<Description>Send SMS messages to your Free Mobile device.</Description>
+		<Product>Free Mobile for PowerShell</Product>
+		<Version>2.0.0</Version>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AssemblyName>Belin.FreeMobile.Cmdlets</AssemblyName>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<OutDir>../bin</OutDir>
+		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Belin.FreeMobile" Version="3.*" />
+		<PackageReference Include="System.Management.Automation" Version="7.*" PrivateAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="System.Management.Automation" />
+	</ItemGroup>
+</Project>
