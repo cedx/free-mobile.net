@@ -55,19 +55,6 @@ public class Client(NetworkCredential credential, Uri? baseUrl = null) {
 	/// <returns>Completes when the message has been sent.</returns>
 	/// <exception cref="HttpRequestException">The HTTP response is unsuccessful.</exception>
 	public async Task SendMessage(string text, CancellationToken cancellationToken = default) {
-		using var request = await CreateRequest(text, cancellationToken);
-		using var httpClient = new HttpClient();
-		using var response = await httpClient.SendAsync(request, cancellationToken);
-		response.EnsureSuccessStatusCode();
-	}
-
-	/// <summary>
-	/// Creates the HTTP request corresponding to the specified message.
-	/// </summary>
-	/// <param name="text">The message text.</param>
-	/// <param name="cancellationToken">The token to cancel the operation.</param>
-	/// <returns>The newly created HTTP request message.</returns>
-	private async Task<HttpRequestMessage> CreateRequest(string text, CancellationToken cancellationToken = default) {
 		var trimmedText = text.Trim();
 		using var query = new FormUrlEncodedContent(new Dictionary<string, string> {
 			["msg"] = trimmedText.Length > 160 ? trimmedText[0..160] : trimmedText,
@@ -75,8 +62,11 @@ public class Client(NetworkCredential credential, Uri? baseUrl = null) {
 			["user"] = credential.UserName
 		});
 
-		var request = new HttpRequestMessage(HttpMethod.Get, new Uri(BaseUrl, $"sendmsg?{await query.ReadAsStringAsync(cancellationToken)}"));
-		request.Headers.UserAgent.Add(new ProductInfoHeaderValue(".NET", Environment.Version.ToString(3)));
-		return request;
+		using var httpClient = new HttpClient();
+		httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(".NET", Environment.Version.ToString(3)));
+
+		var url = new Uri(BaseUrl, $"sendmsg?{await query.ReadAsStringAsync(cancellationToken)}");
+		using var response = await httpClient.GetAsync(url, cancellationToken);
+		response.EnsureSuccessStatusCode();
 	}
 }
