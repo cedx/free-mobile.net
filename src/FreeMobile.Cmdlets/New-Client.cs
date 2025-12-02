@@ -7,7 +7,7 @@ using System.Net;
 /// </summary>
 [Cmdlet(VerbsCommon.New, "Client")]
 [OutputType(typeof(Client))]
-public class NewClient: PSCmdlet {
+public class NewClientCommand: PSCmdlet {
 
 	/// <summary>
 	/// The Free Mobile user name and password.

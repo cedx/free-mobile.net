@@ -7,7 +7,7 @@ using System.Net;
 /// </summary>
 [Cmdlet(VerbsCommunications.Send, "Message", DefaultParameterSetName = "Credential")]
 [OutputType(typeof(void))]
-public class SendMessage: PSCmdlet {
+public class SendMessageCommand: PSCmdlet {
 
 	/// <summary>
 	/// The Free Mobile client to use.
