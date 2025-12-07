@@ -11,20 +11,20 @@ public sealed class ClientTests(TestContext testContext) {
 	public async Task NetworkError() {
 		// It should throw a `HttpRequestException` if a network error occurred.
 		var client = new Client("anonymous", "secret", "http://localhost:666");
-		await ThrowsAsync<HttpRequestException>(() => client.SendMessage("Hello World!", testContext.CancellationToken));
+		await ThrowsAsync<HttpRequestException>(() => client.SendMessageAsync("Hello World!", testContext.CancellationToken));
 	}
 
 	[TestMethod]
 	public async Task InvalidCredentials() {
 		// It should throw a `HttpRequestException` if the credentials are invalid.
 		var client = new Client("anonymous", "secret");
-		await ThrowsAsync<HttpRequestException>(() => client.SendMessage("Hello World!", testContext.CancellationToken));
+		await ThrowsAsync<HttpRequestException>(() => client.SendMessageAsync("Hello World!", testContext.CancellationToken));
 	}
 
 	[TestMethod]
 	public async Task ValidCredentials() {
 		// It should send SMS messages if the credentials are valid.
 		var client = new Client(Environment.GetEnvironmentVariable("FREEMOBILE_ACCOUNT")!, Environment.GetEnvironmentVariable("FREEMOBILE_API_KEY")!);
-		await client.SendMessage("Hello Cédric, from .NET!", testContext.CancellationToken);
+		await client.SendMessageAsync("Hello Cédric, from .NET!", testContext.CancellationToken);
 	}
 }

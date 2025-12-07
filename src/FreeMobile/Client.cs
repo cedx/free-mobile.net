@@ -54,7 +54,15 @@ public class Client(NetworkCredential credential, Uri? baseUrl = null) {
 	/// <param name="cancellationToken">The token to cancel the operation.</param>
 	/// <returns>Completes when the message has been sent.</returns>
 	/// <exception cref="HttpRequestException">The HTTP response is unsuccessful.</exception>
-	public async Task SendMessage(string text, CancellationToken cancellationToken = default) {
+	public void SendMessage(string text) => SendMessageAsync(text, CancellationToken.None).Wait();
+
+	/// <summary>
+	/// Sends an SMS message to the underlying account.
+	/// </summary>
+	/// <param name="text">The message text.</param>
+	/// <param name="cancellationToken">The token to cancel the operation.</param>
+	/// <returns>Completes when the message has been sent.</returns>
+	public async Task SendMessageAsync(string text, CancellationToken cancellationToken = default) {
 		var trimmedText = text.Trim();
 		using var query = new FormUrlEncodedContent(new Dictionary<string, string> {
 			["msg"] = trimmedText.Length > 160 ? trimmedText[0..160] : trimmedText,

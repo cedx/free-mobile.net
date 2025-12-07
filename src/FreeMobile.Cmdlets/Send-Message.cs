@@ -43,5 +43,5 @@ public class SendMessageCommand: PSCmdlet {
 	/// <summary>
 	/// Performs execution of this command.
 	/// </summary>
-	protected override void ProcessRecord() => Client.SendMessage(Message).Wait();
+	protected override void ProcessRecord() => Client.SendMessageAsync(Message).Wait();
 }
