@@ -1,6 +1,6 @@
 @{
 	DefaultCommandPrefix = "FreeMobile"
-	ModuleVersion = "3.3.0"
+	ModuleVersion = "4.0.0"
 	PowerShellVersion = "7.5"
 	RootModule = "bin/Belin.FreeMobile.Cmdlets.dll"
 
