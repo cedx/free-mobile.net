@@ -5,20 +5,20 @@ using System.Net;
 /// <summary>
 /// Sends an SMS message to the specified Free Mobile account.
 /// </summary>
-[Cmdlet(VerbsCommunications.Send, "Message", DefaultParameterSetName = "Credential")]
+[Cmdlet(VerbsCommunications.Send, "Message", DefaultParameterSetName = nameof(Credential))]
 [OutputType(typeof(void))]
 public class SendMessageCommand: PSCmdlet {
 
 	/// <summary>
 	/// The Free Mobile client to use.
 	/// </summary>
-	[Parameter(Mandatory = true, ParameterSetName = "Client")]
+	[Parameter(Mandatory = true, ParameterSetName = nameof(Client))]
 	public required Client Client { get; set; }
 
 	/// <summary>
 	/// The Free Mobile user name and password.
 	/// </summary>
-	[Parameter(Mandatory = true, ParameterSetName = "Credential"), Credential]
+	[Parameter(Mandatory = true, ParameterSetName = nameof(Credential)), Credential]
 	public required PSCredential Credential { get; set; }
 
 	/// <summary>
@@ -30,14 +30,14 @@ public class SendMessageCommand: PSCmdlet {
 	/// <summary>
 	/// The base URL of the remote API endpoint.
 	/// </summary>
-	[Parameter(ParameterSetName = "Credential")]
+	[Parameter(ParameterSetName = nameof(Credential))]
 	public Uri? Uri { get; set; }
 
 	/// <summary>
 	/// Performs initialization of command execution.
 	/// </summary>
 	protected override void BeginProcessing() {
-		if (ParameterSetName == "Credential") Client = new Client((NetworkCredential) Credential, Uri);
+		if (ParameterSetName == nameof(Credential)) Client = new Client((NetworkCredential) Credential, Uri);
 	}
 
 	/// <summary>
