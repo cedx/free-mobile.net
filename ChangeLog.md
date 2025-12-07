@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [4.0.0](https://github.com/cedx/free-mobile.net/compare/v3.3.0...v4.0.0)
+- Breaking change: renamed the asynchronous `Client.SendMessage()` method to `SendMessageAsync()`.
+- Added the synchronous `Client.SendMessage()` method.
+
 ## Version [3.3.0](https://github.com/cedx/free-mobile.net/compare/v3.2.0...v3.3.0)
 - Merged the [C#](https://learn.microsoft.com/en-us/dotnet/csharp) and [PowerShell](https://learn.microsoft.com/en-us/powershell) projects into one solution.
 
