@@ -54,7 +54,7 @@ public class Client(NetworkCredential credential, Uri? baseUrl = null) {
 	/// <param name="cancellationToken">The token to cancel the operation.</param>
 	/// <returns>Completes when the message has been sent.</returns>
 	/// <exception cref="HttpRequestException">The HTTP response is unsuccessful.</exception>
-	public void SendMessage(string text) => SendMessageAsync(text, CancellationToken.None).Wait();
+	public void SendMessage(string text) => SendMessageAsync(text, CancellationToken.None).GetAwaiter().GetResult();
 
 	/// <summary>
 	/// Sends an SMS message to the underlying account.
