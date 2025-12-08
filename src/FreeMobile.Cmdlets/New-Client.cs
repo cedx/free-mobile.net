@@ -5,8 +5,7 @@ using System.Net;
 /// <summary>
 /// Creates a new Free Mobile client.
 /// </summary>
-[Cmdlet(VerbsCommon.New, "Client")]
-[OutputType(typeof(Client))]
+[Cmdlet(VerbsCommon.New, "Client"), OutputType(typeof(Client))]
 public class NewClientCommand: PSCmdlet {
 
 	/// <summary>

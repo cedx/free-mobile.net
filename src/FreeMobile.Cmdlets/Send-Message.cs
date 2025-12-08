@@ -5,8 +5,7 @@ using System.Net;
 /// <summary>
 /// Sends an SMS message to the specified Free Mobile account.
 /// </summary>
-[Cmdlet(VerbsCommunications.Send, "Message", DefaultParameterSetName = nameof(Credential))]
-[OutputType(typeof(void))]
+[Cmdlet(VerbsCommunications.Send, "Message", DefaultParameterSetName = nameof(Credential)), OutputType(typeof(void))]
 public class SendMessageCommand: PSCmdlet {
 
 	/// <summary>
