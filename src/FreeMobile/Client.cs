@@ -72,7 +72,7 @@ public class Client(NetworkCredential credential, Uri? baseUrl = null) {
 
 		using var httpClient = new HttpClient();
 		var version = GetType().Assembly.GetName().Version!;
-		httpClient.DefaultRequestHeaders.Add("User-Agent", $".NET/{Environment.Version.ToString(3)} | FreeMobile/{version.ToString(3)}");
+		httpClient.DefaultRequestHeaders.Add("User-Agent", $".NET/{Environment.Version.ToString(3)} | Belin.FreeMobile/{version.ToString(3)}");
 
 		var url = new Uri(BaseUrl, $"sendmsg?{await query.ReadAsStringAsync(cancellationToken)}");
 		using var response = await httpClient.GetAsync(url, cancellationToken);
