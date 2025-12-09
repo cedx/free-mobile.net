@@ -19,7 +19,7 @@
 	<Folder Name="/Examples/Cmdlets/">
 		<File Path="example/Cmdlets/Send-Message.ps1" />
 	</Folder>
-	<Folder Name="/Shared/">
+	<Folder Name="/HttpRequests/">
 		<File Path="share/SendMessage.http" />
 	</Folder>
 	<Folder Name="/Scripts/">
