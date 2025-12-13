@@ -6,7 +6,7 @@ using System.Net;
 /// Creates a new Free Mobile client.
 /// </summary>
 [Cmdlet(VerbsCommon.New, "Client"), OutputType(typeof(Client))]
-public class NewClientCommand: PSCmdlet {
+public class NewClientCommand: Cmdlet {
 
 	/// <summary>
 	/// The Free Mobile user name and password.
