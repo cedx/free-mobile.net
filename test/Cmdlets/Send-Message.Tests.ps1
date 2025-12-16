@@ -4,7 +4,7 @@
 #>
 Describe "Send-Message" {
 	BeforeAll {
-		Import-Module ./FreeMobile.psd1
+		Import-Module "$PSScriptRoot/../../FreeMobile.psd1"
 	}
 
 	It "should throw an exception if a network error occurred" {
