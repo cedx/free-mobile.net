@@ -64,4 +64,4 @@ Write-Output "The message was sent successfully."
 
 > [!WARNING]
 > The text of the messages will be automatically truncated to **160** characters:  
-> you can't send multipart messages using this library.
+> you can't send multipart messages using this mpdule.
