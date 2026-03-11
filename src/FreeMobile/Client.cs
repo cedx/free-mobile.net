@@ -2,7 +2,6 @@ namespace Belin.FreeMobile;
 
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
-using System.Net.Http.Headers;
 
 /// <summary>
 /// Sends messages by SMS to a <see href="https://mobile.free.fr">FreeMobile</see> account.
