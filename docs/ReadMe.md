@@ -22,7 +22,7 @@ Install the latest version of **Free Mobile for .NET** with your package manager
 dotnet add package Belin.FreeMobile
 
 # PowerShell with PSResourceGet
-Install-PSResource FreeMobile
+Install-PSResource Belin.FreeMobile
 ```
 
 For detailed instructions, see the [installation guide](Installation.md).
@@ -55,7 +55,7 @@ The `Client.SendMessageAsync()` method returns a `Task` that completes when the 
 This library provides the `Send-FreeMobileMessage` cmdlet, which allows you to send SMS notifications to your mobile phone:
 
 ```pwsh
-Import-Module FreeMobile
+Import-Module Belin.FreeMobile
 
 $credential = [pscredential]::new("Your account identifier", (ConvertTo-SecureString "Your API key" -AsPlainText))
 Send-FreeMobileMessage "Hello World from PowerShell!" -Credential $credential

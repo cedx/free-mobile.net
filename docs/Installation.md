@@ -36,12 +36,12 @@ using Belin.FreeMobile;
 From a command prompt, run:
 
 ```pwsh
-Install-PSResource -Name FreeMobile -Repository PSGallery
+Install-PSResource Belin.FreeMobile
 ```
 
 ### 2. Import it
 Now in your [PowerShell](https://learn.microsoft.com/en-us/powershell) code, you can use:
 
 ```pwsh
-Import-Module -Name FreeMobile
+Import-Module Belin.FreeMobile
 ```
