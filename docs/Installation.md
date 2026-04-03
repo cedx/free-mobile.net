@@ -36,7 +36,7 @@ using Belin.FreeMobile;
 From a command prompt, run:
 
 ```pwsh
-Install-PSResource Belin.FreeMobile
+Install-PSResource Belin.FreeMobile -Repository PSGallery
 ```
 
 ### 2. Import it
