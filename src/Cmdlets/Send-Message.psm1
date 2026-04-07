@@ -1,6 +1,5 @@
 using namespace Belin.FreeMobile
 using namespace System.Management.Automation
-using namespace System.Net
 using module ./New-Client.psm1
 
 <#
