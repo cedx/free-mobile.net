@@ -1,5 +1,6 @@
 using namespace Belin.FreeMobile
 using namespace System.Diagnostics.CodeAnalysis
+using namespace System.Management.Automation
 using namespace System.Net
 
 <#
