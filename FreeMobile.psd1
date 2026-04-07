@@ -2,7 +2,6 @@
 	DefaultCommandPrefix = "FreeMobile"
 	ModuleVersion = "4.0.0"
 	PowerShellVersion = "7.6"
-	RootModule = "bin/Belin.FreeMobile.Cmdlets.dll"
 
 	Author = "Cédric Belin <cedx@outlook.com>"
 	CompanyName = "Cedric-Belin.fr"
@@ -11,12 +10,17 @@
 	GUID = "8a16d600-a064-4037-9147-d13059c6abf7"
 
 	AliasesToExport = @()
-	FunctionsToExport = @()
+	CmdletsToExport = @()
 	VariablesToExport = @()
 
-	CmdletsToExport = @(
+	FunctionsToExport = @(
 		"New-Client"
 		"Send-Message"
+	)
+
+	NestedModules = @(
+		"src/Cmdlets/New-Client.psm1"
+		"src/Cmdlets/Send-Message.psm1"
 	)
 
 	RequiredAssemblies = @(
