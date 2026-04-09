@@ -1,5 +1,6 @@
 using namespace Belin.FreeMobile
 using namespace System.Management.Automation
+using namespace System.Net.Http
 using module ./New-Client.psm1
 
 <#
@@ -33,6 +34,7 @@ function Send-Message {
 	}
 
 	process {
-		$Client.SendMessage($Message)
+		try { $Client.SendMessage($Message) }
+		catch [HttpRequestException] { Write-Error $_.Exception }
 	}
 }
