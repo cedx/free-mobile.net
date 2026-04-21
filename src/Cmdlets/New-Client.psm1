@@ -26,6 +26,6 @@ function New-Client {
 	)
 
 	process {
-		[Client]::new([NetworkCredential] $Credential, $Uri)
+		[Client]::new($Credential.GetNetworkCredential(), $Uri)
 	}
 }
