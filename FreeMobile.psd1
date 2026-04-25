@@ -1,5 +1,4 @@
 @{
-	DefaultCommandPrefix = "FreeMobile"
 	ModuleVersion = "5.0.0"
 	PowerShellVersion = "7.6"
 
@@ -7,25 +6,12 @@
 	CompanyName = "Cedric-Belin.fr"
 	Copyright = "© Cédric Belin"
 	Description = "Send SMS messages to your Free Mobile device."
-	GUID = "8a16d600-a064-4037-9147-d13059c6abf7"
+	GUID = "b14df03a-0b89-4c79-b21c-9344315e4837"
 
 	AliasesToExport = @()
+	FunctionsToExport = @()
 	CmdletsToExport = @()
 	VariablesToExport = @()
-
-	FunctionsToExport = @(
-		"New-Client"
-		"Send-Message"
-	)
-
-	NestedModules = @(
-		"src/Cmdlets/New-Client.psm1"
-		"src/Cmdlets/Send-Message.psm1"
-	)
-
-	RequiredAssemblies = @(
-		"bin/Belin.FreeMobile.dll"
-	)
 
 	PrivateData = @{
 		PSData = @{
