@@ -1,5 +1,4 @@
 using Belin.FreeMobile;
-using System;
 using System.Net.Http;
 
 // Sends an SMS notification.

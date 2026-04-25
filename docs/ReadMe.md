@@ -32,7 +32,6 @@ This library provides the `Client` class, which allow to send SMS messages to yo
 
 ```cs
 using Belin.FreeMobile;
-using System;
 using System.Net.Http;
 
 try {
