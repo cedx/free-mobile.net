@@ -19,7 +19,7 @@ Install the latest version of **Free Mobile for .NET** with your package manager
 
 ```shell
 # .NET with NuGet
-dotnet add package Belin.FreeMobile
+dotnet package add Belin.FreeMobile
 
 # PowerShell with PSResourceGet
 Install-PSResource Belin.FreeMobile

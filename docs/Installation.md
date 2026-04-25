@@ -20,7 +20,7 @@ pwsh --version
 From a command prompt, run:
 
 ```shell
-dotnet add package Belin.FreeMobile
+dotnet package add Belin.FreeMobile
 ```
 
 ### 2. Import it
