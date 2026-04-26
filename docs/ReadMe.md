@@ -15,19 +15,15 @@ This will give you an identification key allowing access to the [Free Mobile](ht
 ![Screenshot](Screenshot.png)
 
 ### Get the library
-Install the latest version of **Free Mobile for .NET** with your package manager:
+Install the latest version of **Free Mobile for .NET** with [NuGet](https://www.nuget.org) package manager:
 
 ```shell
-# .NET with NuGet
 dotnet package add Belin.FreeMobile
-
-# PowerShell with PSResourceGet
-Install-PSResource Belin.FreeMobile
 ```
 
 For detailed instructions, see the [installation guide](Installation.md).
 
-## .NET/C# usage
+## Usage
 This library provides the `Client` class, which allow to send SMS messages to your mobile phone by using the `SendMessage()` or `SendMessageAsync()` method:
 
 ```cs
@@ -49,18 +45,3 @@ The `Client.SendMessageAsync()` method returns a `Task` that completes when the 
 > [!WARNING]
 > The text of the messages will be automatically truncated to **160** characters:  
 > you can't send multipart messages using this library.
-
-## PowerShell usage
-This library provides the `Send-FreeMobileMessage` cmdlet, which allows you to send SMS notifications to your mobile phone:
-
-```pwsh
-Import-Module Belin.FreeMobile
-
-$credential = [pscredential]::new("Your account identifier", (ConvertTo-SecureString "Your API key" -AsPlainText))
-Send-FreeMobileMessage "Hello World from PowerShell!" -Credential $credential
-Write-Output "The message was sent successfully."
-```
-
-> [!WARNING]
-> The text of the messages will be automatically truncated to **160** characters:  
-> you can't send multipart messages using this mpdule.
