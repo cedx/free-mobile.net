@@ -2,6 +2,7 @@
 	<PropertyGroup>
 		<Company>Cedric-Belin.fr</Company>
 		<Copyright>© Cédric Belin</Copyright>
+		<Description>Send SMS messages to your Free Mobile device.</Description>
 		<Product>Free Mobile for .NET</Product>
 		<Version>5.1.0</Version>
 	</PropertyGroup>
