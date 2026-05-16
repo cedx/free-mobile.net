@@ -15,9 +15,9 @@
 
 	PrivateData = @{
 		PSData = @{
-			LicenseUri = "https://github.com/cedx/free-mobile.net/blob/main/License.md"
-			ProjectUri = "https://github.com/cedx/free-mobile.net"
-			ReleaseNotes = "https://github.com/cedx/free-mobile.net/releases"
+			LicenseUri = "https://github.com/CedX/FreeMobile.net/blob/main/License.md"
+			ProjectUri = "https://github.com/CedX/FreeMobile.net"
+			ReleaseNotes = "https://github.com/CedX/FreeMobile.net/releases"
 			Tags = "api", "client", "free", "mobile", "sms"
 		}
 	}

@@ -13,7 +13,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 		<PackageTags>api;client;free;mobile;sms</PackageTags>
-		<RepositoryUrl>https://github.com/cedx/free-mobile.net.git</RepositoryUrl>
+		<RepositoryUrl>https://github.com/CedX/FreeMobile.net.git</RepositoryUrl>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
